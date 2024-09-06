@@ -1,0 +1,37 @@
+body{
+    background: ivory;
+}
+
+h1{
+    color: darkgreen;
+    text-align: center;
+}
+
+
+p{
+    color: orange;
+}
+
+dt{
+    color: blue;
+    font-family: 'Times New Roman', Times, serif;
+}
+dd{
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+ol{
+    color: pink;
+    list-style-type: upper-roman;
+}
+
+ol ol{
+    list-style-type: lower-roman;
+}
+
+ul{
+    color: green;
+    list-style-type: square;
+}

@@ -1,0 +1,128 @@
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+body{
+  background-color: #0f120d;
+ }
+#data-scientist-pic{padding: 10px 20px;
+    background-color: #b6537c;
+    margin-left: 20px;
+    border-radius: 20px;
+    border: 2px solid #53b653;
+    float: right;
+
+}
+#data-scientist-pic1{padding: 10px 20px;
+  background-color: #b6537c;
+  margin-left: 20px;
+  border-radius: 20px;
+  border: 2px solid #53b653;
+  float: right;
+
+}
+h1 h2 h3{
+  float: right;
+}
+
+#links{
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    color: rgb(200, 20, 53);
+    font-size: x-large;
+    padding: 10px 20px;
+    background-color: #53b653;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 30px;
+    border-radius: 20px;
+    border: 2px solid #53b653;
+}
+#links :hover{
+    background-color: #b6537c;
+    color: #53b653;
+    border: 2px solid #e7e7ee;
+}
+h1{
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    color: rgb(15, 14, 14);
+    font-size: x-large;
+    padding: 10px 20px;
+    background-color: #b6537c;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 30px;
+    border-radius: 20px;
+    border: 2px solid #53b653;
+}
+
+#roboto-bold {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: blueviolet;
+    font-size: x-large;
+  }
+
+
+  #bodoni-moda-sc{
+  font-family: "Bodoni Moda SC", serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    font-size: xx-large;
+    color: #54c520;
+  }
+  #pg1footer{
+    font-family: "Bodoni Moda SC", serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    font-size: xx-large;
+    color: #f46d07;
+  }

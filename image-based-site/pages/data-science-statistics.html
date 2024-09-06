@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Data Science Statistics</title>
+</head>
+<body id="body2">
+    <header>
+        <nav>
+            <ol>
+                <li><a href="../index.html">Data Science Introduction</a></li>
+                <li><a href="data-science-math.html">Data Science and Math</a></li>
+                <li><a href="data-science-statistics.html">Data Science and Statistics</a></li>
+                <li><a href="data-science-advanced.html">Advanced Data Science</a></li>
+                <li><a href="data-science-cert.html">Getting Certified</a></li>
+            </ol>
+        </nav>
+    </header>
+    <main class="right-side">
+        <h1 class="centered" style="color: orange;">Data Science - Introduction to Statistics</h1>
+        <p>Statistics is the science of analyzing data.</p>
+        <p>When we create a predictive model, it’s crucial to assess its reliability.</p>
+        <p>After all, a prediction is only valuable if we can trust it.</p>
+        <h2>Descriptive Statistics</h2>
+        <p>Let’s start with some basic descriptive statistics.</p>
+        <h3>These statistics summarize key features of a data set, such as:</h3>
+        <ul>
+            <li>Count</li>
+            <li>Sum</li>
+            <li>Standard Deviation</li>
+            <li>Percentile</li>
+            <li>Average</li>
+            <li>And more...</li>
+        </ul>
+        <hr/>
+        <p>Descriptive statistics provide a good starting point to understand the data.</p>
+        <h3>In Python, we can use the describe() function to summarize the data:</h3>
+        <h2>Python code</h2>
+        <hr/>
+        <h3>print(full_health.data.describe())</h3>
+        <hr/>
+        <img src="../pictures3rdpage/table output.png" alt="table output">
+        <hr/>
+        <h1 class="centered" style="color: orange;">25%, 50%, and 75% - Percentiles</h1>
+        <p>Percentiles are used in statistics to describe the value below which a given percentage of observations fall
+        </p>
+        <h2>Understanding Percentiles</h2>
+        <h2>Let’s explain this with examples using Average_Pulse.</h2>
+        <p>The 25th percentile of Average_Pulse means that 25% of all training sessions have an average pulse of 100 beats per minute or lower.</p>
+        <p>Conversely, 75% of the training sessions have an average pulse of 100 beats per minute or higher.</p>
+        <p>The 75th percentile of Average_Pulse means that 75% of all training sessions have an average pulse of 111 beats per minute or lower. </p>
+        <p>Conversely, 25% of the training sessions have an average pulse of 111 beats per minute or higher.</p>
+        <h2></h2>
+        <h3></h3>
+        <ol class="code-decimal-left">
+            <li>import numpy as np</li>
+            <li></li>
+            <li>Max_Pulse = full_health_data["Max_Pulse"]</li>
+            <li>percentile10 = np.percentile(Max_Pulse, 10)</li>
+            <li>print(percentile10)</li>
+        </ol>
+        <h2>Explanation:</h2>
+        <ul>
+            <li>Max_Pulse = full_health_data["Max_Pulse"]: Isolate the Max_Pulse variable from the full health data set.</li>
+            <li>np.percentile(): This function is used to calculate the 10th percentile of Max_Pulse.</li>
+        </ul>
+        <h3>The 10th percentile of Max_Pulse is 120, meaning that 10% of all training sessions have a Max_Pulse of 120 or lower.</h3>
+        <hr/>
+        <h1 class="centered" style="color: orange;">Standard Deviation</h1>
+        <p>Standard deviation is a measure that describes how spread out the observations are in a data set.</p>
+        <h2>Understanding Standard Deviation</h2>
+        <p>A mathematical function may struggle to predict precise values if the observations are widely spread.</p>
+        <p>Standard deviation quantifies this uncertainty.</p>
+        <h3>Low standard deviation: Most values are close to the mean (average).</h3>
+        <h3>High standard deviation: Values are spread out over a wider range.</h3>
+        <p>Tip: Standard deviation is often represented by the symbol Sigma (σ).</p>
+        <h2>Calculating Standard Deviation in Python</h2>
+        <p>We can use the std() function from Numpy to find the standard deviation of a variable:</p>
+        <hr/>
+        <ol class="code-decimal-left">
+            <li>import numpy as np</li>
+            <li>std = np.std(full_health_data)</li>
+            <li></li>
+            <li>print(std)</li>
+        </ol>
+        <hr/>
+        <h2>Output:</h2>
+        <img src="../pictures3rdpage/standard deviation output.png" alt="">
+        <hr/>
+        <p>What do these numbers mean?</p>
+        <h2>Coefficient of Variation</h2>
+        <p>The coefficient of variation helps to understand the relative size of the standard deviation.</p>
+        <p>Mathematically, it is defined as:</p>
+        <hr/>
+        <!--code to allow for fraction-->
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <semantics>
+                <mrow>
+                    <mtext>Coefficient&nbsp;of&nbsp;Variation</mtext>
+                    <mo>=</mo>
+                    <mfrac>
+                        <mtext>Standard&nbsp;Deviation</mtext>
+                        <mtext>Mean</mtext>
+                    </mfrac>
+                </mrow>
+                <annotation encoding="application/x-tex">
+                    \text{Coefficient of Variation} = \frac{\text{Standard Deviation}}{\text{Mean}}
+                </annotation>
+            </semantics>
+        </math>
+        <!--code to allow for fraction-->
+        <hr/>
+        <h3>Here’s how to calculate it in Python:</h3>
+        <ol class="code-decimal-left">
+            <li>import numpy as np</li>
+            <li></li>
+            <li>cv = np.std(full_health_data) / np.mean(full_health_data)</li>
+            <li>print(cv)</li>
+        </ol>
+        <hr/>
+        <h2>Output:</h2>
+        <img src="../pictures3rdpage/Coefficient of variation output.png" alt="Coefficient of variation output">
+        <p>We observe that the variables</p>
+        <ul>
+            <li>Duration</li>
+            <li>Calorie_Burnage</li>
+            <li>Hours_Work</li>
+        </ul>
+        <hr/>
+        <p>Have a high standard deviation compared to</p>
+        <ul>
+            <li>Max_Pulse</li>
+            <li>Average_Pulse</li>
+            <li>Hours_Sleep</li>
+        </ul>
+        <hr/>
+        <h1 class="centered" style="color: orange;">Data Science - Understanding Variance</h1>
+        <p>Variance is a measure of how spread out the values in a data set are.</p>
+        <p> If you take the square root of the variance, you get the standard deviation.</p>
+        <p>Conversely, if you square the standard deviation, you get the variance.</p>
+        <p>Let’s use a data set with 10 observations to illustrate how to calculate the variance:</p>
+        <p>Step-by-Step Calculation of Variance for Average_Pulse</p>
+        <h3>Step 1 find the MEAN</h3>
+        <hr/>
+        <p>(80+85+90+95+100+105+110+115+120+125) / 10 = 102.5</p>
+        <h4>The Mean is 102.5</h4>
+        <hr/>
+        <h3>Step 2 Calculate the Difference from the Mean for Each Value:</h3>\
+        <p>80 - 102.5 = -22.5</p>
+        <p>85 - 102.5 = -17.5</p>
+        <p>90 - 102.5 = -12.5</p>
+        <p>95 - 102.5 = -7.5</p>
+        <p>100 - 102.5 = -2.5</p>
+        <p>105 - 102.5 = 2.5</p>
+        <p>110 - 102.5 = 7.5</p>
+        <p>115 - 102.5 = 12.5</p>
+        <p>120 - 102.5 = 17.5</p>
+        <p>125 - 102.5 = 22.5</p>
+        <hr/>
+        <h3>Step 3 Square Each Difference:</h3>
+        <p>(-22.5)<sup>2</sup> = 506.25</p>
+        <p>(-17.5)<sup>2</sup> = 306.25</p>
+        <p>(-12.5)<sup>2</sup> = 156.25</p>
+        <p>(-7.5)<sup>2</sup> = 56.25</p>
+        <p>(-2.5)<sup>2</sup> = 6.25</p>
+        <p>2.5<sup>2</sup> = 6.25</p>
+        <p>7.5<sup>2</sup> = 56.25</p>
+        <p>12.5<sup>2</sup> = 156.25</p>
+        <p>17.5<sup>2</sup> = 306.25</p>
+        <p>22.5<sup>2</sup> = 506.25</p>
+        <p>each value must be squared to get the total spread</p>
+        <hr/>
+        <h3>Step 4 Calculate the Variance (Average of Squared Differences):</h3>
+        <hr/>
+        <p>(506.25 + 306.25 + 156.25 + 56.25 + 6.25 + 6.25 + 56.25 + 156.25 + 306.25 + 506.25) / 10 = 206.25</p>
+        <h4>The variance is 206.25</h4>
+        <hr/>
+        <h2>Using Python to Calculate Variance</h2>
+        <p>You can use the var() function from Numpy to find the variance. Here’s how you can do it for the given data set:</p>
+        <ol class="code-decimal-left">
+            <li>import numpy as np</li>
+            <li></li>
+            <li>health_data = [80, 85, 90, 95, 100, 105, 110, 115, 120, 125]</li>
+            <li>var = np.var(health_data)</li>
+            <li>print(var)</li>
+        </ol>  
+        <p>output</p>
+        <img src="../pictures3rdpage/variance of health-data.png" alt="Variance of health data">
+        <hr/>
+        <h3>To calculate the variance for each column in a full data set, you can use:</h3>
+        <ol class="code-decimal-left">
+            <li>import numpy as np</li>
+            <li></li>
+            <li>full_health_data = np.array([</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;[30, 80, 120, 240, 10, 7],</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;[30, 85, 120, 250, 10, 7],</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;[45, 90, 130, 260, 8, 7],</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;[45, 95, 130, 270, 8, 7],</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;[45, 100, 140, 280, 0, 7],</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;[60, 105, 140, 290, 7, 8],</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;[60, 110, 145, 300, 7, 8],</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;[60, 115, 145, 310, 8, 8],</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;[75, 120, 150, 320, 0, 8],</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;[75, 125, 150, 330, 8, 8]</li>
+            <li>])</li>
+            <li></li>
+            <li>var_full = np.var(full_health_data, axis=0)</li>
+            <li>print(var_full)</li>
+        </ol>
+        <p>output</p>
+        <img src="../pictures3rdpage/Variance of Whole data set.png" alt="Variance of Whole data set">
+        <hr/>
+        <h1 class="centered" style="color: orange;">Data Science - Understanding Correlation</h1>
+        <p>Correlation measures the relationship between two variables.</p>
+        <p>It helps in predicting a value by converting an input (x) to an output (f(x)), using the relationship between the variables.</p>
+        <h3>Correlation Coefficient</h3>
+        <h4>The correlation coefficient quantifies the relationship between two variables and ranges from -1 to 1:</h4>
+        <li>1: Perfect positive linear relationship (e.g., Average_Pulse vs. Calorie_Burnage)</li>
+        <li>0: No linear relationship</li>
+        <li>-1: Perfect negative linear relationship (e.g., More hours worked leads to lower calorie burnage during a training session)</li>
+        <h4>Example of a Perfect Linear Relationship (Correlation Coefficient = 1)</h4>
+        <p>Let’s visualize the relationship between Average_Pulse and Calorie_Burnage using a scatter plot with a small data set of 10 observations.</p>
+        <ol class="code-decimal-left">
+            <li>import matplotlib.pyplot as plt</li>
+            <li></li>
+            <li>health_data.plot(x='Average_Pulse', y='Calorie_Burnage', kind='scatter')</li>
+            <li>plt.show()</li>
+        </ol>
+        <p>Output</p>
+        <img src="../pictures3rdpage/Perfect Linear Relationship.png" alt="Perfect Linear Relationship">
+        <hr/>
+        <p>Output: The correlation coefficient is 1, indicating a perfect linear relationship between Average_Pulse and Calorie_Burnage.</p>
+
+        <h4>Example of a Perfect Negative Linear Relationship (Correlation Coefficient = -1)</h4>
+        <img src="../pictures3rdpage/Perfect Negative Linear Relationship.png" alt="Perfect Negative Linear Relationship">
+        <p>Here, we use fictional data to show a perfect negative linear relationship.</p>
+        <p>The x-axis represents hours worked before a training session, and the y-axis is Calorie_Burnage.</p>    
+        <p>Longer work hours lead to lower calorie burnage due to exhaustion.</p>
+
+        <h5>Python</h5>
+        <ol class="code-decimal-left">
+            <li>import pandas as pd</li>
+            <li>import matplotlib.pyplot as plt</li>
+            <li></li>
+            <li>negative_corr = {</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;'Hours_Work_Before_Training': [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;'Calorie_Burnage': [220, 240, 260, 280, 300, 320, 340, 360, 380, 400]</li>
+            <li>}</li>
+            <li>negative_corr = pd.DataFrame(data=negative_corr)</li>
+            <li></li>
+            <li>negative_corr.plot(x='Hours_Work_Before_Training', y='Calorie_Burnage', kind='scatter')</li>
+            <li>plt.show()</li>
+        </ol>
+       
+        <p>Output: The correlation coefficient is -1, indicating a perfect negative linear relationship.</p>
+
+        <h4>Example of No Linear Relationship (Correlation Coefficient = 0)</h4>
+        <hr/>
+        <p>Let’s plot Max_Pulse against Duration from the full_health_data set. </p>
+        <p>There is no linear relationship, meaning longer training sessions do not lead to higher Max_Pulse.</p>
+
+        <h5>Python</h5>
+        <ol class="code-decimal-left">
+            <li>import matplotlib.pyplot as plt</li>
+            <li></li>
+            <li>full_health_data.plot(x='Duration', y='Max_Pulse', kind='scatter')</li>
+            <li>plt.show()</li>
+        </ol>
+        <p>output</p>
+        <img src="../pictures3rdpage/No Linear Relationship.png" alt="No Linear Relationship">
+           
+        
+        <hr/>
+        <h1 class="centered" style="color: orange;">Data Science - Understanding the Correlation Matrix</h1>
+        <p>A correlation matrix is a table that shows the correlation coefficients between different variables.</p>
+        <p> It helps in understanding the relationships between multiple variables at once.</p>
+
+        <h3>What is a Correlation Matrix?</h3>
+        <p>A matrix is an array of numbers arranged in rows and columns. </p>
+        <p>In a correlation matrix, the variables are represented in the first row and the first column,</p>
+        <p> with each cell showing the correlation coefficient between the corresponding variables.</p>
+
+        <h4>Example Correlation Matrix:</h4>
+        <p>The table below uses data from a full health data set.</p>
+        <img src="../pictures3rdpage/Correlation Matrix.png" alt="Correlation Matrix">
+        <h4>Observations:</h4>
+        <ul>
+            <li>Duration and Calorie_Burnage have a high correlation coefficient of 0.89, indicating a strong positive relationship.</li>
+            <li> This makes sense as longer training sessions typically burn more calories.</li>
+            <li>Average_Pulse and Calorie_Burnage have a very low correlation coefficient of 0.02, suggesting almost no linear relationship. </li>
+            <li>However, this does not necessarily mean that Average_Pulse does not affect Calorie_Burnage. We will explore this further later.</li>
+        </ul>
+
+        <h3>Creating a Correlation Matrix in Python</h3>
+        <p>You can use the <code>corr()</code> function in Python to create a correlation matrix. </p>
+        <p>The <code>round()</code> function can be used to round the output to two decimal places:</p>
+
+        <h4>Python</h4>
+        <ol class="code-decimal-left">
+            <li>import pandas as pd</li>
+            <li></li>
+            <li># Assuming full_health_data is a DataFrame</li>
+            <li>Corr_Matrix = round(full_health_data.corr(), 2)</li>
+            <li>print(Corr_Matrix)</li>
+        </ol>
+        
+        <p>output</p>
+        <img src="../pictures3rdpage/Correlation Matrix in Python.png" alt="Correlation Matrix in Python">
+        <p>Correlation Matrix</p>
+
+        <h3>Visualizing Correlation with a Heatmap</h3>
+        <img src="../pictures3rdpage/Using a Heatmap.png" alt="Using a Heatmap">
+        <p>A heatmap can be used to visualize the correlation between variables. </p>
+        <P>The closer the correlation coefficient is to 1, the greener the squares get.</P>
+        <P> The closer it is to -1, the browner the squares get.</P>
+
+        <h4>Using Seaborn to Create a Heatmap:</h4>
+        <p>Seaborn is a visualization library based on Matplotlib that can be used to create a correlation heatmap.</p>
+
+        <h4>Python</h4>
+        <ol class="code-decimal-left">
+            <li>import matplotlib.pyplot as plt</li>
+            <li>import seaborn as sns</li>
+            <li></li>
+            <li># Calculate the correlation matrix</li>
+            <li>correlation_full_health = full_health_data.corr()</li>
+            <li></li>
+            <li># Create the heatmap</li>
+            <li>axis_corr = sns.heatmap(</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;correlation_full_health,</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;vmin=-1, vmax=1, center=0,</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;cmap=sns.diverging_palette(50, 500, n=500),</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;square=True</li>
+            <li>)</li>
+            <li></li>
+            <li>plt.show()</li>
+        </ol>
+        <p>Explanation:</p>
+        <ul>
+            <li>Import the Seaborn library as sns.</li>
+            <li>Use the full_health_data set to calculate the correlation matrix.</li>
+            <li>Create a heatmap using <code>sns.heatmap()</code> to visualize the correlation matrix.</li>
+            <li>Define the maximal and minimal values of the heatmap and set 0 as the center.</li>
+            <li>Define the colors with <code>sns.diverging_palette()</code>, where <code>n=500</code> means 500 color variations in the palette.</li>
+            <li>Set <code>square=True</code> to ensure the heatmap cells are square-shaped.</li>
+        </ul>
+        <p>This approach helps in visually identifying the strength and direction of relationships between variables.</p>
+        <hr/>
+        <h1 class="centered" style="color: orange;">Data Science - Understanding Correlation vs. Causality</h1>
+        <h2>Correlation vs. Causality</h2>
+        <p>Correlation measures the numerical relationship between two variables. </p>
+        <P>However, a high correlation coefficient (close to 1) does not necessarily imply a direct causal relationship between the variables.</P>
+
+        <h3>Classic Example: Ice Cream Sales and Drowning Accidents</h3>
+        <p>During the summer, both ice cream sales and drowning accidents at the beach increase.  </p>
+        <P>Does this mean that increased ice cream sales cause more drowning accidents? Probably not.</P>
+        <P>These two variables are likely correlating due to a third factor, </P>
+        <p>such as warmer weather, which increases both ice cream consumption and swimming activities.</p>
+
+        <h4>The Beach Example in Python</h4>
+        <p>Here’s a fictional data set to illustrate this concept:</p>
+
+        <h5>Python</h5>
+        <ol class="code-decimal-left">
+            <li>import pandas as pd</li>
+            <li>import matplotlib.pyplot as plt</li>
+            <li></li>
+            <li>Drowning_Accident = [20, 40, 60, 80, 100, 120, 140, 160, 180, 200]</li>
+            <li>Ice_Cream_Sale = [20, 40, 60, 80, 100, 120, 140, 160, 180, 200]</li>
+            <li>Drowning = {</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;"Drowning_Accident": Drowning_Accident,</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;"Ice_Cream_Sale": Ice_Cream_Sale</li>
+            <li>}</li>
+            <li>Drowning = pd.DataFrame(data=Drowning)</li>
+            <li></li>
+            <li>Drowning.plot(x="Ice_Cream_Sale", y="Drowning_Accident", kind="scatter")</li>
+            <li>plt.show()</li>
+            <li></li>
+            <li>correlation_beach = Drowning.corr()</li>
+            <li>print(correlation_beach)</li>
+        </ol>
+        <p>output</p>
+        <img src="../pictures3rdpage/The Beach Example in Python.png" alt="The Beach Example in Python">
+        <p>Correlation vs. Causality</p>
+
+        <p>Can we use ice cream sales to predict drowning accidents? The answer is likely no. These variables are probably correlating by coincidence.</p>
+
+        <h4>Factors Contributing to Drowning:</h4>
+        <ul>
+            <li>Unskilled swimmers</li>
+            <li>Waves</li>
+            <li>Cramp</li>
+            <li>Seizure disorders</li>
+            <li>Lack of supervision</li>
+            <li>Alcohol misuse</li>
+            <li>Etc.</li>
+        </ul>
+
+        <h3>Reversing the Argument</h3>
+        <p>Does a low correlation coefficient (close to zero) mean that changes in one variable do not affect the other? Not necessarily.</p>
+
+        <p>Example Question: </p>
+        <p>Can we conclude that Average_Pulse does not affect Calorie_Burnage because of a low correlation coefficient? The answer is no.</p>
+
+        <h4>Key Differences:</h4>
+        <ul>
+            <li>Correlation measures how closely the data are related.</li>
+            <li>Causality is the conclusion that one variable causes the other.</li>
+        </ul>
+        <p>Understanding these differences is crucial in data science to avoid incorrect conclusions based on correlation alone.</p>
+        <a href="#top" id="pg-top" style="float: right;">Click For Top of page</a>
+    </main>
+</body>
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Data Science Advanced</title>
+</head>
+<body id="body3">
+    <header>
+        <nav>
+            <ol>
+                <li><a href="../index.html">Data Science Introduction</a></li>
+                <li><a href="data-science-math.html">Data Science and Math</a></li>
+                <li><a href="data-science-statistics.html">Data Science and Statistics</a></li>
+                <li><a href="data-science-advanced.html">Advanced Data Science</a></li>
+                <li><a href="data-science-cert.html">Getting Certified</a></li>
+            </ol>
+        </nav>
+    </header>
+    <main>
+        <h1 style="color: orange;">Data Science - Understanding Linear Regression</h1>
+        <h2>When analyzing Calorie_Burnage, it’s important to consider multiple variables. </h2>
+        <h2>One key variable that affects Calorie_Burnage is the Duration of the training session.</h2>
+        <h2> Combining Duration with Average_Pulse provides a more accurate explanation of Calorie_Burnage.</h2>
+
+        <h3>What is Linear Regression?</h3>
+        <p>Linear regression is a method used to find the relationship between variables. In machine learning and statistical modeling, this relationship is used to predict outcomes.</p>
+
+        <p>In this module, we will address the following questions:</p>
+        <ul>
+            <li>Can we conclude that Average_Pulse and Duration are related to Calorie_Burnage?</li>
+            <li>Can we use Average_Pulse and Duration to predict Calorie_Burnage?</li>
+        </ul>
+        <hr/>
+        <h3>Least Squares Method</h3>
+        <p>Linear regression uses the least squares method. This method involves drawing a line through all the data points in a way that minimizes the distance (residuals or errors) from the data points to the line.</p>
+        <p>Illustration: The red dashed lines represent the distances from the data points to the regression line.</p>
+        <img src="../pictures4thpage/Least-squared-method.png" alt="Least Square Method">
+        <hr/>
+        <h3>Linear Regression Using One Explanatory Variable</h3>
+        <p>Let’s predict Calorie_Burnage using Average_Pulse with linear regression:</p>
+
+        <h4>Python</h4>
+        <ol class="code-decimal-left">
+            <li>import pandas as pd</li>
+            <li>import matplotlib.pyplot as plt</li>
+            <li>from scipy import stats</li>
+            <li></li>
+            <li># Load the data</li>
+            <li>full_health_data = pd.read_csv("data.csv", header=0, sep=",")</li>
+            <li></li>
+            <li># Define the variables</li>
+            <li>x = full_health_data["Average_Pulse"]</li>
+            <li>y = full_health_data["Calorie_Burnage"]</li>
+            <li></li>
+            <li># Perform linear regression</li>
+            <li>slope, intercept, r, p, std_err = stats.linregress(x, y)</li>
+            <li></li>
+            <li># Define the regression function</li>
+            <li>def myfunc(x):</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;return slope * x + intercept</li>
+            <li></li>
+            <li># Apply the function to the data</li>
+            <li>mymodel = list(map(myfunc, x))</li>
+            <li></li>
+            <li># Plot the data and the regression line</li>
+            <li>plt.scatter(x, y)</li>
+            <li>plt.plot(x, mymodel)</li>
+            <li>plt.ylim(ymin=0, ymax=2000)</li>
+            <li>plt.xlim(xmin=0, xmax=200)</li>
+            <li>plt.xlabel("Average_Pulse")</li>
+            <li>plt.ylabel("Calorie_Burnage")</li>
+            <li>plt.show()</li>
+        </ol>
+
+        <h4>Explanation:</h4>
+        <ul>
+            <li>Import necessary modules: Pandas, Matplotlib, and Scipy.</li>
+            <li>Isolate variables: Average_Pulse as x and Calorie_Burnage as y.</li>
+            <li>Perform linear regression: Obtain key values (slope, intercept, r, p, std_err) using <code>stats.linregress(x, y)</code>.</li>
+            <li>Create a regression function: Use the slope and intercept to define a function that predicts y values.</li>
+            <li>Apply the function: Generate new y values using the regression function.</li>
+            <li>Plot the data: Create a scatter plot of the original data and overlay the regression line.</li>
+            <li>Define axis limits and labels: Set the limits and labels for the axes.</li>
+        </ul>
+        <p>Output: The plot shows the linear regression line for predicting Calorie_Burnage based on Average_Pulse.</p>
+        <img src="../pictures4thpage/Linear Regression Using One Explanatory Variable.png" alt="Linear Regression Using One Explanatory Variable">
+        <p>Question: Do you think this line can precisely predict Calorie_Burnage?</p>
+
+        <p>Conclusion: Average_Pulse alone is not sufficient for precise predictions of Calorie_Burnage. </p>
+        <p>Additional variables, such as Duration, should be considered for more accurate predictions.</p>
+        <hr/>
+        <h1 style="color: orange;">Data Science - Understanding the Regression Table</h1>
+        <p>A regression table summarizes the output from linear regression, providing key insights into the model. The table typically includes:</p>
+        <ul>
+            <li>Information about the model</li>
+            <li>Coefficients of the linear regression function</li>
+            <li>Regression statistics</li>
+            <li>Statistics of the coefficients from the linear regression function</li>
+            <li>Additional information not covered in this module</li>
+        </ul>
+
+        <h3>Example: Regression Table with Average_Pulse as Explanatory Variable</h3>
+        <img src="../pictures4thpage/Regression Table with Average_Pulse as Explanatory Variable.png" alt="Regression Table with Average_Pulse as Explanatory Variable">
+        <p>Linear Regression Table: This table helps you analyze advanced output from linear regression.</p>
+
+        <h3>Creating a Linear Regression Table in Python</h3>
+        <p>Here’s how to create a regression table using Python:</p>
+
+        <h4>Python</h4>
+        <ol class="code-decimal-left">
+            <li>import pandas as pd</li>
+            <li>import statsmodels.formula.api as smf</li>
+            <li></li>
+            <li># Load the data</li>
+            <li>full_health_data = pd.read_csv("data.csv", header=0, sep=",")</li>
+            <li></li>
+            <li># Create the model using Ordinary Least Squares (OLS)</li>
+            <li>model = smf.ols('Calorie_Burnage ~ Average_Pulse', data=full_health_data)</li>
+            <li></li>
+            <li># Fit the model</li>
+            <li>results = model.fit()</li>
+            <li></li>
+            <li># Print the summary of the regression results</li>
+            <li>print(results.summary())</li>
+        </ol>
+        <h4>Explanation:</h4>
+        <ul>
+            <li>Import the necessary library: <code>statsmodels.formula.api</code> as <code>smf</code>. Statsmodels is a statistical library in Python.</li>
+            <li>Load the data: Use the <code>full_health_data</code> set.</li>
+            <li>Create the model: Use Ordinary Least Squares (OLS) with <code>smf.ols()</code>. The explanatory variable (<code>Average_Pulse</code>) must be specified first in the parentheses.</li>
+            <li>Fit the model: Call <code>.fit()</code> to obtain the <code>results</code> variable, which contains detailed information about the regression model.</li>
+            <li>Print the summary: Call <code>summary()</code> to display the regression table with the results.</li>
+        </ul>
+        <p>This approach provides a comprehensive overview of the linear regression model, helping you understand the relationships between variables and the overall fit of the model.</p>
+        <hr/>
+        <h1 style="color: orange;">Data Science - Understanding the “Information Part” in a Regression Table</h1>
+        <p>The “Information Part” of a regression table provides key details about the regression model and its context. Here’s a breakdown:</p>
+        <img src="../pictures4thpage/information part of regression table.png" alt="information">
+        <ul>
+            <li><strong>Dep. Variable:</strong> Short for “Dependent Variable.” In this example, <code>Calorie_Burnage</code> is the dependent variable, which is assumed to be explained by <code>Average_Pulse</code>.</li>
+            <li><strong>Model:</strong> <code>OLS</code> stands for Ordinary Least Squares, a type of regression model that uses the least squares method to minimize the sum of the squared residuals.</li>
+            <li><strong>Date and Time:</strong> These fields indicate when the regression output was calculated in Python.</li>
+        </ul>
+        <p>This section helps you understand the basic setup and context of the regression analysis.</p>
+        <hr/>
+        <h1 style="color: orange;">Data Science - Understanding the “Coefficients Part” in a Regression Table</h1>
+        <li></li>
+            <li># Fit the model</li>
+            <li>results = model.fit()</li>
+            <li></li>
+            <li># Print the summary of the regression results</li>
+            <li>print(results.summary())</li>
+        </ol>
+        <h4>Explanation:</h4>
+        <ul>
+            <li>Import the necessary library: <code>statsmodels.formula.api</code> as <code>smf</code>. Statsmodels is a statistical library in Python.</li>
+            <li>Load the data: Use the <code>full_health_data</code> set.</li>
+            <li>Create the model: Use Ordinary Least Squares (OLS) with <code>smf.ols()</code>. The explanatory variable (<code>Average_Pulse</code>) must be specified first in the parentheses.</li>
+            <li>Fit the model: Call <code>.fit()</code> to obtain the <code>results</code> variable, which contains detailed information about the regression model.</li>
+            <li>Print the summary: Call <code>summary()</code> to display the regression table with the results.</li>
+        </ul>
+        <p>This approach provides a comprehensive overview of the linear regression model, helping you understand the relationships between variables and the overall fit of the model.</p>
+        <hr/>
+        <h1 style="color: orange;">Data Science - Understanding the “Information Part” in a Regression Table</h1>
+        <p>The “Information Part” of a regression table provides key details about the regression model and its context. Here’s a breakdown:</p>
+        <img src="../pictures4thpage/information part of regression table.png" alt="information">
+        <ul>
+            <li><strong>Dep. Variable:</strong> Short for “Dependent Variable.” In this example, <code>Calorie_Burnage</code> is the dependent variable, which is assumed to be explained by <code>Average_Pulse</code>.</li>
+            <li><strong>Model:</strong> <code>OLS</code> stands for Ordinary Least Squares, a type of regression model that uses the least squares method to minimize the sum of the squared residuals.</li>
+            <li><strong>Date and Time:</strong> These fields indicate when the regression output was calculated in Python.</li>
+        </ul>
+        <p>This section helps you understand the basic setup and context of the regression analysis.</p>
+        <hr/>
+        <h1 style="color: orange;">Data Science - Understanding the “Coefficients Part” in a Regression Table</h1>
+        <p>The “Coefficients Part” of a regression table provides the coefficients of the linear regression function. Here’s a breakdown:</p>
+        <img src="../pictures4thpage/Coefficients Part.png" alt="Coefficients Part">
+        <ul>
+            <li><strong>Coef:</strong> Short for coefficient, it represents the output of the linear regression function.</li>
+        </ul>
+        <p>The linear regression function can be mathematically expressed as:</p>
+        <p><code>Calorie_Burnage = 0.3296 × Average_Pulse + 346.8662</code></p>
+        <p>These numbers mean:</p>
+        <ul>
+            <li>If Average_Pulse increases by 1, Calorie_Burnage increases by 0.3296 (or 0.3 when rounded).</li>
+            <li>If Average_Pulse is 0, the Calorie_Burnage is 346.8662 (or 346.9 when rounded).</li>
+        </ul>
+        <p>The intercept adjusts the model’s precision in predicting outcomes.</p>
+        <p><strong>Question:</strong> Do you think this is a good model?</p>
+
+        <h3>Defining the Linear Regression Function in Python</h3>
+        <p>You can define the linear regression function in Python to make predictions. For example, what is the Calorie_Burnage if Average_Pulse is 120, 130, 150, or 180?</p>
+
+        <h4>Python</h4>
+        <ol class="code-decimal-left">
+            <li>def Predict_Calorie_Burnage(Average_Pulse):</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;return 0.3296 * Average_Pulse + 346.8662</li>
+            <li></li>
+            <li>print(Predict_Calorie_Burnage(120))</li>
+            <li>print(Predict_Calorie_Burnage(130))</li>
+            <li>print(Predict_Calorie_Burnage(150))</li>
+            <li>print(Predict_Calorie_Burnage(180))</li>
+        </ol>
+        <hr/>
+        <h1 style="color: orange;">Data Science - Understanding the "Statistics of the Coefficient Part" in a Regression Table</h1>
+        <img src="../pictures4thpage/Coefficients Part.png" alt="Coefficients Part">
+        <p>In this section, we test whether the coefficients from the linear regression function significantly impact the dependent variable (Calorie_Burnage). This involves proving a relationship between Average_Pulse and Calorie_Burnage using statistical tests.</p>
+        <hr/>
+        <h3>Key Components:</h3>
+        <ul>
+            <li><strong>std err:</strong> Standard Error</li>
+            <li><strong>t:</strong> t-value of the coefficients</li>
+            <li><strong>P>|t|:</strong> P-value</li>
+            <li><strong>[0.025 0.975]:</strong> Confidence interval of the coefficients</li>
+        </ul>
+        <hr/>
+        <p>We’ll focus on understanding the P-value.</p>
+
+        <h3>The P-value</h3>
+        <p>The P-value helps determine if there is a relationship between Average_Pulse and Calorie_Burnage. We test if the true value of the coefficient is zero (no relationship) using hypothesis testing.</p>
+        <ul>
+            <li><strong>Low P-value (< 0.05):</strong> Indicates the coefficient is likely not zero, suggesting a significant relationship.</li>
+            <li><strong>High P-value (> 0.05):</strong> Indicates we cannot conclude a significant relationship between the explanatory variable and the dependent variable. This is also called an insignificant P-value.</li>
+        </ul>
+
+        <h3>Hypothesis Testing</h3>
+        <p>Hypothesis testing is a statistical procedure to validate results. In our example, we test if the true coefficient of Average_Pulse and the intercept is zero.</p>
+        <ul>
+            <li><strong>Null Hypothesis (H0):</strong> The coefficient is zero (no relationship).</li>
+            <li><strong>Alternative Hypothesis (HA):</strong> The coefficient is not zero (there is a relationship).</li>
+        </ul>
+        <hr/>
+        <p>Mathematically:</p>
+        <ul>
+            <li>H0: Average_Pulse = 0</li>
+            <li>HA: Average_Pulse ≠ 0</li>
+            <li>H0: Intercept = 0</li>
+            <li>HA: Intercept ≠ 0</li>
+        </ul>
+        <hr/>
+        <h3>Interpreting the P-value</h3>
+        <p>The null hypothesis can either be rejected or not. If we reject the null hypothesis, we conclude there is a relationship between Average_Pulse and Calorie_Burnage. The P-value is used for this conclusion.</p>
+        <ul>
+            <li><strong>Threshold:</strong> A common threshold for the P-value is 0.05.</li>
+            <li>A P-value of 0.05 means there is a 5% chance of falsely rejecting the null hypothesis.</li>
+            <li>If the P-value is lower than 0.05, we reject the null hypothesis and conclude a relationship exists between the variables.</li>
+        </ul>
+        <p>However, in this case, the P-value for Average_Pulse is 0.824. This means we cannot conclude a relationship between Average_Pulse and Calorie_Burnage, as there is an 82.4% chance that the true coefficient of Average_Pulse is zero.</p>
+        <p>The intercept is used to adjust the regression function’s predictive accuracy, so interpreting its P-value is uncommon.</p>
+        <hr/>
+        <h1 style="color: orange;">Understanding R-Squared in a Regression Table</h1>
+        <p>R-Squared and Adjusted R-Squared describe how well the linear regression model fits the data points.</p>
+        <img src="../pictures4thpage/R - Squared.png" alt="R - Squared">
+        <h4>Key Points:</h4>
+        <ul>
+            <li><strong>R-Squared Value:</strong> Always between 0 and 1 (0% to 100%).</li>
+            <li><strong>High R-Squared:</strong> Indicates that many data points are close to the regression line.</li>
+            <li><strong>Low R-Squared:</strong> Indicates that the regression line does not fit the data well.</li>
+        </ul>
+
+        <h4>Visual Example of a Low R-Squared Value (0.00)</h4>
+        <img src="../pictures4thpage/Low R - Squared Value.png" alt="Low R - Squared Value">
+        <p>An R-Squared value of zero means the regression line does not fit the data well. This can be visualized by plotting the regression line through the data points of Average_Pulse and Calorie_Burnage.</p>
+
+        <h4>Visual Example of a High R-Squared Value (0.79)</h4>
+        <img src="../pictures4thpage/High R - Squared Value.png" alt="High R - Squared Value">
+        <p>When plotting Duration against Calorie_Burnage, the R-Squared value increases, indicating that the data points are closer to the regression line.</p>
+
+        <h4>Python Code Example:</h4>
+        <ol class="code-decimal-left">
+            <li>import pandas as pd</li>
+            <li>import matplotlib.pyplot as plt</li>
+            <li>from scipy import stats</li>
+            <li></li>
+            <li># Load the data</li>
+            <li>full_health_data = pd.read_csv("data.csv", header=0, sep=",")</li>
+            <li></li>
+            <li># Define the variables</li>
+            <li>x = full_health_data["Duration"]</li>
+            <li>y = full_health_data["Calorie_Burnage"]</li>
+            <li></li>
+            <li># Perform linear regression</li>
+            <li>slope, intercept, r, p, std_err = stats.linregress(x, y)</li>
+            <li></li>
+            <li># Define the regression function</li>
+            <li>def myfunc(x):</li>
+            <li>    return slope * x + intercept</li>
+            <li></li>
+            <li># Apply the function to the data</li>
+            <li>mymodel = list(map(myfunc, x))</li>
+            <li></li>
+            <li>print(mymodel)</li>
+            <li></li>
+            <li># Plot the data and the regression line</li>
+            <li>plt.scatter(x, y)</li>
+            <li>plt.plot(x, mymodel)</li>
+            <li>plt.ylim(ymin=0, ymax=2000)</li>
+            <li>plt.xlim(xmin=0, xmax=200)</li>
+            <li>plt.xlabel("Duration")</li>
+            <li>plt.ylabel("Calorie_Burnage")</li>
+            <li>plt.show()</li>
+        </ol>
+        <h4>Summary - Predicting Calorie_Burnage with Average_Pulse</h4>
+        <p>Key Findings:</p>
+        <ul>
+            <li><strong>Coefficient of 0.3296:</strong> Indicates that Average_Pulse has a very small effect on Calorie_Burnage.</li>
+            <li><strong>High P-value (0.824):</strong> Means we cannot conclude a relationship between Average_Pulse and Calorie_Burnage.</li>
+            <li><strong>R-Squared value of 0:</strong> Indicates that the regression line does not fit the data well.</li>
+        </ul>
+        <p>This summary highlights that Average_Pulse alone is not sufficient for accurately predicting Calorie_Burnage.</p>
+        <hr/>
+        <h1 style="color: orange;">Data Science - Linear Regression Case</h1>
+        <p>Case: Use Duration and Average_Pulse to Predict Calorie_Burnage</p>
+
+        <h4>Creating a Linear Regression Table</h4>
+        <p>Example:</p>
+
+        <ol class="code-decimal-left">
+            <li>import pandas as pd</li>
+            <li>import statsmodels.formula.api as smf</li>
+            <li></li>
+            <li># Load the dataset</li>
+            <li>full_health_data = pd.read_csv("data.csv", header=0, sep=",")</li>
+            <li></li>
+            <li># Create the model</li>
+            <li>model = smf.ols('Calorie_Burnage ~ Average_Pulse + Duration', data=full_health_data)</li>
+            <li>results = model.fit()</li>
+            <li></li>
+            <li># Print the summary</li>
+            <li>print(results.summary())</li>
+        </ol>
+        <p>Explanation:</p>
+        <ol class="code-decimal-left">
+            <li>Import the library: <code>statsmodels.formula.api as smf</code>. Statsmodels is a statistical library in Python.</li>
+            <li>Load the dataset: Use the <code>full_health_data</code> set.</li>
+            <li>Create the model: Use Ordinary Least Squares with <code>smf.ols()</code>. The explanatory variables must be written first in the parentheses.</li>
+            <li>Fit the model: By calling <code>.fit()</code>, you obtain the variable <code>results</code>, which holds information about the regression model.</li>
+            <li>Get the summary: Call <code>summary()</code> to get the table with the results of the linear regression.</li>
+        </ol>
+
+        <h4>Output:</h4>
+        <img src="../pictures4thpage/Output.png" alt="Output">
+        <p>The linear regression function can be rewritten mathematically as:</p>
+        <p><code>Calorie_Burnage = Average_Pulse × 3.1695 + Duration × 5.8424 - 334.5194</code></p>
+        <p>Rounded to two decimals:</p>
+        <p><code>Calorie_Burnage = Average_Pulse × 3.17 + Duration × 5.84 - 334.52</code></p>
+
+        <h4>Defining the Linear Regression Function in Python</h4>
+        <p>Define the linear regression function in Python to perform predictions.</p>
+
+        <ol class="code-decimal-left">
+            <li>def Predict_Calorie_Burnage(Average_Pulse, Duration):</li>
+            <li>    return 3.1695 * Average_Pulse + 5.8434 * Duration - 334.5194</li>
+            <li></li>
+            <li>print(Predict_Calorie_Burnage(110, 60))</li>
+            <li>print(Predict_Calorie_Burnage(140, 45))</li>
+            <li>print(Predict_Calorie_Burnage(175, 20))</li>
+        </ol>
+
+        <h4>Predictions:</h4>
+        <ul>
+            <li>Average pulse 110, duration 60 minutes: 365 Calories</li>
+            <li>Average pulse 140, duration 45 minutes: 372 Calories</li>
+            <li>Average pulse 175, duration 20 minutes: 337 Calories</li>
+        </ul>
+
+        <h4>Accessing the Coefficients</h4>
+        <ul>
+            <li>Calorie_Burnage increases by 3.17 if Average_Pulse increases by one.</li>
+            <li>Calorie_Burnage increases by 5.84 if Duration increases by one.</li>
+        </ul>
+
+        <h4>Accessing the P-Value</h4>
+        <ul>
+            <li>P-value is 0.00 for Average_Pulse, Duration, and the Intercept.</li>
+            <li>The P-value is statistically significant for all variables, as it is less than 0.05.</li>
+        </ul>
+        <p>Conclusion: Average_Pulse and Duration have a relationship with Calorie_Burnage.</p>
+
+        <h4>Adjusted R-Squared</h4>
+        <ul>
+            <li>Problem with R-squared: It almost always increases if more variables are added, and never decreases.</li>
+            <li>Adjusted R-squared: Adjusts for this problem, making it better to look at if there are multiple explanatory variables.</li>
+            <li>Adjusted R-squared value: 0.814.</li>
+        </ul>
+        <p>Conclusion: The model fits the data points well!</p>
+
+        <p>Congratulations! You have now finished the final module of the data science library.</p>
+        <a href="#top" id="pg-top">Click For Top of page</a>
+    </main>
+</body>
+</html>

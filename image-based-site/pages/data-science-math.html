@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Data Science Math</title>
+</head>
+<body id="body1">
+    <header>
+        <nav>
+            <ol>
+                <li><a href="../index.html">Data Science Introduction</a></li>
+                <li><a href="data-science-math.html">Data Science and Math</a></li>
+                <li><a href="data-science-statistics.html">Data Science and Statistics</a></li>
+                <li><a href="data-science-advanced.html">Advanced Data Science</a></li>
+                <li><a href="data-science-cert.html">Getting Certified</a></li>
+            </ol>
+        </nav>
+    </header>
+    <main>
+    <h1 class="centered" style="color: orange;">Data Science Linear Functions</h1>
+    <h1>The below image will be used throughout the site to explain what Data Scientist do</h1>
+    <img src="../pictures2ndpage/sports watch set data.png" alt="sports watch set data">
+    <img src="../pictures2ndpage/math-statistics.jpg" alt="Statistics" id="top-right-img">
+    <p>Understanding mathematical functions is crucial for data scientists, as they help in making predictions and interpreting data.</p>
+    <h3>Linear Functions</h3>
+    <p>In mathematics, a function relates one variable to another.</p>
+    <p>For example, consider the relationship between calorie burn and average pulse.</p>
+    <p>Generally, as the average pulse changes, so does the calorie burn, making calorie burn dependent on the average pulse.</p>
+    <p>As the average pulse increases, calorie burn is likely to increase as well.</p>
+    <p>Here, calorie burn is the dependent variable, and average pulse is the independent variable.</p>
+    <p>The relationship between these variables can often be expressed using a mathematical formula (function).</p>
+    <p>A linear function has one independent variable (x) and one dependent variable (y), and is expressed as:</p>
+    <hr/>
+    <h3>y = f(x) = ax + b</h3>
+    <hr/>
+    <img src="../pictures2ndpage/linear function graph.png" alt="linear function graph" class="right-side">
+    <p>This function calculates the dependent variable’s value based on the chosen value of the independent variable.</p>
+    <h2>Explanation</h2>
+    <ul>
+        <li>( f(x) ): The output (dependent variable)</li>
+        <li>( x ): The input (independent variable)</li>
+        <li>( a ): Slope, the coefficient of the independent variable, indicating the rate of change of the dependent variable</li>
+        <li>( b ): Intercept, the value of the dependent variable when ( x = 0 ), and the point where the line crosses the vertical axis</li>
+    </ul>
+    <h2>Linear Function with One Explanatory Variable</h2>
+    <p>A function with one explanatory variable uses one variable for prediction.</p>
+    <p>For instance, to predict calorie burn using average pulse, we use the formula:</p>
+    <hr/>
+    <h3>f(x) = 2x + 80</h3>
+    <hr/>
+    <h4>Here’s what the components mean:</h4>
+    <p>( f(x) ): The output, predicting Calorie_Burn</p>
+    <p>( x ): The input, Average_Pulse</p>
+    <p>( 2 ): Slope, indicating how much Calorie_Burn increases if Average_Pulse increases by one unit</p>
+    <p>( 80 ): Intercept, a fixed value representing the dependent variable when ( x = 0 )</p>
+    <h2>Plotting a Linear Function</h2>
+    <p>Linearity means a “straight line.”</p>
+    <p>Graphically, a linear function will always be a straight line, which can slope upwards, downwards, or be horizontal or vertical.</p>
+    <h2>Graph Explanation:</h2>
+    <p>The horizontal axis (x-axis) represents Average_Pulse.</p>
+    <p>The vertical axis (y-axis) represents Calorie_Burn.</p>
+    <p>Calorie_Burn is a function of Average_Pulse, meaning we use Average_Pulse to predict Calorie_Burn.</p>
+    <p>The blue diagonal line represents the mathematical function predicting calorie burn.</p>
+    <hr/>
+    <h2>Data Science - Plotting Linear Functions</h2>
+    <h3>The Sports Watch Data Set</h3>
+    <h4>Here is a health data set:</h4>
+    <p>The vertical axis (y-axis) represents Calorie_Burn.</p>
+    <p>Calorie_Burn is a function of Average_Pulse, meaning we use Average_Pulse to predict Calorie_Burn.</p>
+    <p>The blue diagonal line represents the mathematical function predicting calorie burn.</p>
+    <hr/>
+    <h2>Data Science - Plotting Linear Functions</h2>
+    <h3>The Sports Watch Data Set</h3>
+    <h4>Here is a health data set:</h4>
+    <table id="table">
+        <thead>
+            <tr>
+                <th>Duration</th>
+                <th>Average Pulse</th>
+                <th>Max Pulse</th>
+                <th>Calorie Burnage</th>
+                <th>Hours Work</th>
+                <th>Hours Sleep</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>30</td>
+                <td>80</td>
+                <td>120</td>
+                <td>240</td>
+                <td>10</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td>85</td>
+                <td>120</td>
+                <td>250</td>
+                <td>10</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>45</td>
+                <td>90</td>
+                <td>130</td>
+                <td>260</td>
+                <td>8</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>45</td>
+                <td>95</td>
+                <td>130</td>
+                <td>270</td>
+                <td>8</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>45</td>
+                <td>100</td>
+                <td>140</td>
+                <td>280</td>
+                <td>0</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>60</td>
+                <td>105</td>
+                <td>140</td>
+                <td>290</td>
+                <td>7</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>60</td>
+                <td>110</td>
+                <td>145</td>
+                <td>300</td>
+                <td>7</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>60</td>
+                <td>115</td>
+                <td>145</td>
+                <td>310</td>
+                <td>8</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>75</td>
+                <td>120</td>
+                <td>150</td>
+                <td>320</td>
+                <td>0</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>75</td>
+                <td>125</td>
+                <td>150</td>
+                <td>330</td>
+                <td>8</td>
+                <td>8</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Plotting the Data in Python</h2>
+    <img src="../pictures2ndpage/linear function graph-number-2.png" alt="graph-number-2" class="right-side">
+    <p>We can plot the values of Average_Pulse against Calorie_Burnage using the matplotlib library.</p>
+    <h4>Python Code</h4>
+    <hr/>
+    <ol class="code-decimal-left">
+        <li>import matplotlib.pyplot as plt</li>
+        <li></li>
+        <li>health_data.plot(x='Average_Pulse', y='Calorie_Burnage', kind='line')</li>
+        <li>plt.ylim(ymin=0)</li>
+        <li>plt.xlim(xmin=0)</li>
+        <li></li>
+        <li>plt.show()</li>
+    </ol>
+    <h2>Explanation:</h2>
+    <ol class="roman-numerals-left">
+        <li>Import the pyplot module from the matplotlib library.</li>
+        <li>Plot the data: Use Average_Pulse as the x-axis and Calorie_Burnage as the y-axis.</li>
+        <li>Specify the plot type: kind='line' indicates a line plot.</li>
+        <li>Set axis limits: plt.ylim() and plt.xlim() set the minimum values for the y-axis and x-axis to zero.</li>
+        <li>Display the plot: plt.show() renders the plot.</li>
+    </ol>
+    <hr/>
+    <h2>The Graph Output</h2>
+    <p>The graph shows a relationship between Average_Pulse and Calorie_Burnage.</p>
+    <p>As Average_Pulse increases, Calorie_Burnage also increases, indicating that Average_Pulse can be used to predict Calorie_Burnage.</p>
+    <hr/>
+    <h2>Why doesn’t the line extend to the y-axis? >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.</h2>
+    <hr/>
+    <p> The line doesn’t extend to the y-axis because there are no observations where Average_Pulse or Calorie_Burnage are zero. </p>
+    <p>The first observation starts at an Average_Pulse of 80 and a Calorie_Burnage of 240.</p>
+    <h2>Analyzing the Pattern:</h2>
+    <ul>
+        <li>If the average pulse is 80, the calorie burnage is 240.</li>
+        <li>If the average pulse is 90, the calorie burnage is 260.</li>
+        <li>If the average pulse is 100, the calorie burnage is 280.</li>
+    </ul>
+    <h3>This pattern shows that for every 10-unit increase in Average_Pulse, Calorie_Burnage increases by 20 units.</h3>
+    <img src="../pictures2ndpage/linear function graph-number-3.png" alt="graph-number-3" class="left-side">
+    <img src="../pictures2ndpage/linear function graph-number-4.png" alt="graph-number-4" class="right-side">
+    <p style="text-align: right;font-size: xx-large;">Average_Pulse to Calorie_Burn comparison >>>>>></p>
+    <hr/>
+    <hr/>
+    <hr/>
+    <hr/>
+    <hr/>
+    <hr/>
+    <hr/>
+    <hr/>
+    <hr/>
+    <hr/>
+    <hr/>
+    <hr/>
+    <hr/>
+    <hr/>
+    <hr/>
+    <hr/>
+    <hr/>
+    <hr/>
+    <hr/>
+    <hr/>
+    <hr/>
+    <h1 style="text-align: left;">Data Science - Slope and Intercept</h1>
+    <h2>Slope and Intercept</h2>
+    <p>Let’s explain how we determine the slope and intercept of our function:</p>
+    <hr/>
+    <h3>f(x) = 2x + 80</h3>
+    <hr/>
+    <p>The image below highlights the slope, which indicates the steepness of the line, and the intercept, which is the value of ( y ) when ( x = 0 ) (the point where the line crosses the vertical axis).</p>
+    <p>The red line continues from the blue line shown previously.</p>
+    <img src="../pictures2ndpage/linear function graph-number-5.png" alt="graph-number-5" class="right-side">
+    <h2>Finding the Slope</h2>
+    <p>The slope shows how much calorie burn increases as the average pulse increases by one unit. It indicates the steepness of the line.</p>
+    <p>We can find the slope using the proportional difference between two points on the graph:</p>
+    <h4>If the average pulse is 80, the calorie burn is 240.</h4>
+    <h4>If the average pulse is 90, the calorie burn is 260.</h4>
+    <p>We see that if the average pulse increases by 10, the calorie burn increases by 20.</p>
+    <hr/>
+    <!--code to allow for fraction-->
+    <h3>Slope = <sup>20</sup>&frasl;<sub>10</sub> = 2</h3>
+    <!--code to allow for fraction-->
+    <hr/>
+    <h2>Mathematically, the slope is defined as:</h2>
+    <hr/>
+    <!-- code added to allow slope equation-->
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+        <semantics>
+            <mrow>
+                <mtext>Slope</mtext>
+                <mo>=</mo>
+                <mfrac>
+                    <mrow>
+                        <mi>f</mi>
+                        <mo stretchy="false">(</mo>
+                        <msub><mi>x</mi><mn>2</mn></msub>
+                        <mo stretchy="false">)</mo>
+                        <mo>−</mo>
+                        <mi>f</mi>
+                        <mo stretchy="false">(</mo>
+                        <msub><mi>x</mi><mn>1</mn></msub>
+                        <mo stretchy="false">)</mo>
+                    </mrow>
+                    <mrow>
+                        <msub><mi>x</mi><mn>2</mn></msub>
+                        <mo>−</mo>
+                        <msub><mi>x</mi><mn>1</mn></msub>
+                    </mrow>
+                </mfrac>
+            </mrow>
+            <annotation encoding="application/x-tex">
+                \text{Slope} = \frac{f(x_2) - f(x_1)}{x_2 - x_1}
+            </annotation>
+        </semantics>
+    </math>
+    <!-- code added to allow slope equation-->
+    <hr/>
+    <h2>Where:</h2>
+    <ul>
+        <li>( f(x_2) = 260 ) (second observation of Calorie_Burnage)</li>
+        <li>( f(x_1) = 240 ) (first observation of Calorie_Burnage)</li>
+        <li>( x_2 = 90 ) (second observation of Average_Pulse)</li>
+        <li>( x_1 = 80 ) (first observation of Average_Pulse)</li>
+    </ul>
+    <hr/>
+    <!-- code added to allow slope equation-->
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+        <semantics>
+            <mrow>
+                <mtext>Slope</mtext>
+                <mo>=</mo>
+                <mfrac>
+                    <mrow>
+                        <mn>260</mn>
+                        <mo>−</mo>
+                        <mn>240</mn>
+                    </mrow>
+                    <mrow>
+                        <mn>90</mn>
+                        <mo>−</mo>
+                        <mn>80</mn>
+                    </mrow>
+                </mfrac>
+                <mo>=</mo>
+                <mn>2</mn>
+            </mrow>
+            <annotation encoding="application/x-tex">
+                \text{Slope} = \frac{260 - 240}{90 - 80} = 2
+            </annotation>
+        </semantics>
+    </math>
+    <!-- code added to allow slope equation-->
+    <hr/>
+    <p>Ensure the observations are defined in the correct order to maintain accuracy.</p>
+    <h2>Using Python to Find the Slope</h2>
+    <h3>Calculate the slope with the following code:</h3>
+    <ol class="code-decimal-left">
+        <li>def slope(x1, y1, x2, y2):</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s = (y2 - y1) / (x2 - x1)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return s</li>
+        <li></li>
+        <li>print(slope(80, 240, 90, 260))</li>
+    </ol>
+    <h2>Finding the Intercept</h2>
+    <p>The intercept fine-tunes the function’s ability to predict Calorie_Burnage. It is the value of ( y ) when ( x = 0 ).</p>
+    <p>Here, if the average pulse (( x )) is zero, the calorie burn (( y )) is 80. Thus, the intercept is 80.</p>
+    <p>While the intercept may not always have a practical meaning (e.g., an average pulse of zero is unrealistic), it is necessary for the mathematical function.</p>
+    <h3>Other examples where the intercept has practical meaning:</h3>
+    <ul>
+        <li>Predicting next year’s revenue based on marketing expenditure.</li>
+        <li>Fuel usage when a car is idle.</li>
+    </ul>
+    <h1>Finding the Slope and Intercept Using Python</h1>
+    <h2>The np.polyfit() function returns the slope and intercept. Here’s how to use it:</h2>
+    <ol class="code-decimal-left">
+        <li>import pandas as pd</li>
+        <li>import numpy as np</li>
+        <li></li>
+        <li>health_data = pd.read_csv("data.csv", header=0, sep=",")</li>
+        <li></li>
+        <li>y = health_data["Calorie_Burnage"]</li>
+        <li>slope_intercept = np.polyfit(x, y, 1)</li>
+    </ol>
+    <h2>Explanation:</h2>
+    <ol class="roman-numerals-left">
+        <li>Isolate the variables Average_Pulse (x) and Calorie_Burnage (y) from health_data.</li>
+        <li>Call the np.polyfit() function.</li>
+        <li>The last parameter specifies the degree of the function, which is “1” for linear functions.</li>
+    </ol>
+    <h2>We have now calculated the slope (2) and the intercept (80). The mathematical function is:</h2>
+    <hr/>
+    <h3>f(x) = 2x + 80</h3>
+    <hr/>
+    <h2>Task:</h2>
+    <p>Predict calorie burn if the average pulse is 135:</p>
+    <hr/>
+    <h3>f(135) = 2 \times 135 + 80 = 350</h3>
+    <hr/>
+    <p>If the average pulse is 135, the calorie burn is 350.</p>
+    <h1>Defining the Mathematical Function in Python</h1>
+    <p>Here is the same mathematical function, but implemented in Python.</p>
+    <p>This function returns (2x + 80) with (x) as the input:</p>
+    <ol class="code-decimal-left">
+        <li>def my_function(x):</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 2 * x + 80</li>
+        <li></li>
+        <li>print(my_function(135))</li>
+    </ol>
+    <p>Try replacing (x) with 140 and 150 to see different results.</p>
+    <hr/>
+    <h1>Plotting a New Graph in Python</h1>
+    <P>Next, we will plot the same graph as before, but with adjusted axis limits.</P>
+    <P>The maximum value for the y-axis is set to 400, and for the x-axis, it is set to 150:</P>
+    <ol class="code-decimal-left">
+        <li>import matplotlib.pyplot as plt</li>
+        <li></li>
+        <li>health_data.plot(x='Average_Pulse', y='Calorie_Burnage', kind='line')</li>
+        <li>plt.ylim(0, 400)</li>
+        <li>plt.xlim(0, 150)</li>
+        <li></li>
+        <li>plt.show()</li>
+    </ol>
+    <h1>Explanation:</h1>
+    <ol class="roman-numerals-left">
+        <li>Import the pyplot module from the matplotlib library.</li>
+        <li>Plot the data: Use Average_Pulse as the x-axis and Calorie_Burnage as the y-axis.</li>
+        <li>Specify the plot type: kind='line' indicates a line plot.</li>
+        <li>Set axis limits: plt.ylim() and plt.xlim() set the minimum and maximum values for the y-axis and x-axis.</li>
+        <li>Display the plot: plt.show() renders the plot.</li>
+    </ol>
+    <hr/>
+    <h3>This code will produce a graph showing the relationship between Average_Pulse and Calorie_Burnage, with the specified axis limits.</h3>
+    
+</main>
+<footer>
+    <a href="#top" id="pg-top">Click For Top of page</a>
+</footer>
+</body>
+</html>

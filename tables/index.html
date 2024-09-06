@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../tables/css/styles.css">
+    <title>Table basics</title>
+    <style>  table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        table {
+            margin: 20px auto;
+        }</style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Table Basics</a></li>
+                <li><a href="styles-tables.html">Styling Table</a></li>
+                <li><a href="calender.html">Creating a Calendar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <table id="table">
+        <tr>
+          <th>header using th</th>
+          <th>header using th</th>
+          <th>header using th</th>
+          <th colspan="2">undefined</th>
+        </tr>
+        <tr>
+          <td>Alfreds Futterkiste</td>
+          <td>Maria Anders</td>
+          <td>Germany</td>
+          <td rowspan="2">undefined</td>
+        </tr>
+        <tr>
+          <td>Centro comercial Moctezuma</td>
+          <td>Francisco Chang</td>
+          <td>Mexico</td>
+        </tr>
+        <tr>
+          <td>a</td>
+          <td>b</td>
+          <td>c</td>
+          <td>d</td>
+          <td>e</td>
+        </tr>
+      </table>
+</body>
+</html>
