@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Form</h1>
+
+        <form>
+            <h3>applicant info</h3>
+            <label for="fname">First name</label>
+            <input type="text" id="fname" name="fname" required autofocus><br>
+            <label for="lname">Last name</label>
+            <input type="text" id="lname" name="lname" required>
+            <label for="age">age</label>
+            <input type="text" id="age" age="age">
+            <br>
+            <h3>sports choice (choose all that apply)</h3>
+            <input type="checkbox" id="soccer" name="sport" value="soccer">
+            <label for="soccer">I'd like to play soccer</label><br>
+            <input type="checkbox" id="football" name="sport" value="soccer">
+            <label for="football">I'd like to play football</label><br>
+            <input type="checkbox" id="baseball" name="sport" value="baseball">
+            <label for="baseball">I'd like to play baseball</label><br>
+            <input type="checkbox" id="basketball" name="sport" value="baseball">
+            <label for="basketball">I'd like to play basketball</label><br>
+            <input type="checkbox" id="chess" name="sport" value="chess">
+            <label for="chess">I'd like to play chess</label><br>
+            <h3>Preference (Pick One)</h3>
+            <select name="Preference" id="favorite">
+            <option value="can't decide">unsure</option>
+            <option value="soccer">soccer</option>
+            <option value="football">football</option>
+            <option value="baseball">baseball</option>
+            <option value="basketball">basketball</option>
+            <option value="chess">chess</option>
+        </select>
+
+        <h3>Why is this your favorite</h3>
+        <textarea name="explain" rows="5" cols="60" placeholder="Explain why this is your favorite"></textarea>
+        <h3>Why do you like the other sports as well</h3>
+        <textarea name="explain" rows="5" cols="60" placeholder="Explain why you like the other sports"></textarea>
+        <br>
+        
+        <h3>do you exercise more the 4 times a week</h3>
+        <input type="radio" name="exercise" id="yes">
+        <label for="yes">Yes I do</label>
+        <input type="radio" name="exercise" id="no">
+        <label for="no">No I don't</label>
+        <input type="submit" value="submit">
+        </form>
+
+    </div>
+</body>
+</html>
