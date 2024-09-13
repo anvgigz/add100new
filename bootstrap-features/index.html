@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+    <title>Bootstrap Tables</title>
+</head>
+<header>Tables</header>
+
+
+
+<body>
+
+
+    <nav class="navbar navbar-expand-sm bg-primary navbar-light">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">tables</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="pages/images.html">images</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="pages/Jumbotron.html">Jumbotron</a>
+                </li>
+            </ul>
+        </div>   
+    </nav>
+
+
+    <div class="container mt-3">
+        <h2>Accordion Example</h2>
+        <p><strong>Note:</strong> The <strong>data-bs-parent</strong> attribute makes sure that all collapsible elements under the specified parent will be closed when one of the collapsible item is shown.</p>
+        <div id="accordion">
+          <div class="card">
+            <div class="card-header">
+              <a class="btn" data-bs-toggle="collapse" href="#collapseOne" title="Tooltip-click to open or close">
+                Table with Hover
+              </a>
+            </div>
+            <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
+              <div class="card-body">
+
+    <div class="container mt-3">
+        <h2>Table with Hover</h2>
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th>days of the week</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Sunday</td>
+                    <td>Monday</td>
+                    <td>Tuesday</td>
+                    <td>Wednesday</td>
+                    <td>Thursday</td>
+                    <td>Friday</td>
+                    <td>Saturday</td>
+                </tr>
+                <td>family-time</td>
+                <td>study</td>
+                <td>class/study</td>
+                <td>study</td>
+                <td>class/study</td>
+                <td>study</td>
+                <td>family-time</td>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+</div>
+<div class="card">
+    <div class="card-header">
+      <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseTwo" title="Tooltip-click to open or close">
+        Contextual
+    </a>
+    </div>
+    <div id="collapseTwo" class="collapse show" data-bs-parent="#accordion">
+      <div class="card-body">
+       
+      
+    <h2>Contextual</h2>
+    <div class="container mt-3">
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>color</th>
+                <th>text color</th>
+            </tr>
+            <tr>
+                <td class="table-danger">danger</td>
+                <td class="text-danger">danger</td>
+            </tr>
+            <tr>
+                <td class="bg-primary">primary</td>
+                <td class="text-primary">important</td>
+            </tr>
+            <tr>
+                <td class="bg-success">success</td>
+                <td class="text-success">success</td>
+            </tr>
+            <tr>
+                <td class="bg-warning">warning</td>
+                <td class="text-warning">warning</td>
+            </tr>
+            <tr>
+                <td class="bg-info">info</td>
+                <td class="text-info">info</td>
+            </tr>
+            <tr>
+                <td class="bg-light">muted</td>
+                <td class="text-muted">muted</td>
+            </tr>
+            <tr>
+                <td class="bg-secondary">secondary</td>
+                <td class="text-secondary">secondary</td>
+            </tr>
+    </thead>
+    </table>
+</div>
+</div>
+</div>
+</div>
+<div class="card">
+    <div class="card-header">
+      <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseThree" title="Tooltip-click to open or close">
+        Striped table
+      </a>
+    </div>
+    <div id="collapseThree" class="collapse show" data-bs-parent="#accordion">
+      <div class="card-body">
+    
+    <div class="container mt-3">
+        <h3>Striped table</h3>
+        <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>age</th>
+            </tr>
+        </thead>
+            <tr>
+                <td>joe</td>
+                <td>62</td>
+            </tr>
+            <tr>
+                <td>mike    </td>
+                <td>45</td>
+            </tr>
+            <tr>
+                <td>john</td>
+                <td>40</td>
+            </tr>
+        </table>
+    </div>
+</div>
+</div>
+</div>
+<div class="card">
+    <div class="card-header">
+      <a class="btn" data-bs-toggle="collapse" href="#collapseFour" title="Tooltip-click to open or close">
+        Small Table
+      </a>
+    </div>
+    <div id="collapseFour" class="collapse show" data-bs-parent="#accordion">
+      <div class="card-body">
+      
+    <div class="container mt-4">
+        <h3>Small Table</h3>
+        <table class=" table table-sm">
+            <thead>
+                <tr>
+                    <th class="text-primary">appointment</th>
+                    <th class="text-primary">time</th>
+                    <th class="text-primary">days</th>
+                    <th class="text-primary">location</th>
+                    <th class="text-primary">room</th>
+                </tr>
+                <tr>
+                    <td>class</td>
+                    <td>0900-1100</td>
+                    <td>Tuesday,Thursday</td>
+                    <td>school</td>
+                    <td>rm-225</td>
+                    
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+</div>
+</div>
+<div class="card">
+    <div class="card-header">
+      <a class="btn" data-bs-toggle="collapse" href="#collapseFive" title="Tooltip-click to open or close">
+        Responsive Table
+      </a>
+    </div>
+    <div id="collapseFive" class="collapse show" data-bs-parent="#accordion">
+      <div class="card-body">
+      
+    <div class="container mt-4 table-responsive">
+        <h3>Responsive Table</h3>
+        <table class=" table ">
+            <thead>
+                <tr>
+                    <th>shopping list</th>
+                </tr>
+                <tr>
+                    <td>eggs</td>
+                    <td>bread</td>
+                    <td>cheese</td>
+                    <td>fruit</td>
+                    <td>veggies</td>
+                    <td>milk</td>
+                    <td>bagels</td>
+                    <td>juice</td>
+                    <td>meat</td>
+                    <td>fish</td>
+                    <td>chicken</td>
+                    <td>beef</td>
+                    <td>rice</td>
+                    <td>beans</td>
+                    <td>potatoes</td>
+                    <td>onions</td>
+                    <td>garlic</td>
+                    <td>spices</td>
+                    <td>herbs</td>
+                    <td>flour</td>
+                    <td>sugar</td>
+                    <td>oil</td>
+                    <td>vinegar</td>
+                    <td>soy-sauce</td>
+                    <td>mustard</td>
+                    <td>ketchup</td>
+                    <td>mayo</td>
+                    <td>pickles</td>
+                    <td>olives</td>
+                    <td>peppers</td>
+                    <td>tomatoes</td>
+                    <td>lettuce</td>
+                    <td>spinach</td>
+                    <td>arugula</td>
+                    <td>celery</td>
+                    <td>carrots</td>
+            </thead>
+        </table>
+    </div>
+</div>
+</div>
+</div>
+<div class="card">
+    <div class="card-header">
+      <a class="btn" data-bs-toggle="collapse" href="#collapseSix" title="Tooltip-click to open or close">
+        Table Bordered
+      </a>
+    </div>
+    <div id="collapseSix" class="collapse show" data-bs-parent="#accordion">
+      <div class="card-body">
+      
+    <div class="container mt-4">
+        <h3>Table Bordered</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th class="text-primary">appointment</th>
+                    <th class="text-primary">time</th>
+                    <th class="text-primary">days</th>
+                    <th class="text-primary">location</th>
+                    <th class="text-primary">room</th>
+                </tr>
+                <tr>
+                    <td>class</td>
+                    <td>0900-1100</td>
+                    <td>Tuesday,Thursday</td>
+                    <td>school</td>
+                    <td>rm-225</td>
+                    
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+</div>
+
+
+
+
+</body>
+</html>
