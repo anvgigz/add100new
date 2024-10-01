@@ -1,5 +1,5 @@
 body{
-    background: rgb(44, 4, 4);
+    background: rgb(223, 16, 16);
     font-family: Arial, Helvetica, sans-serif;
     float: left: ;
 }
@@ -35,3 +35,19 @@ img{
     padding: 6px;
     float: right;
   }
+
+/* Style for outside page links */
+a[target="_blank"] {
+    color: #ff6600; /* Bright orange color */
+    font-weight: bold; /* Bold text */
+    text-decoration: underline; /* Underline text */
+    background-color: #f0f0f0; /* Light grey background */
+    padding: 5px; /* Padding around the link */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+a[target="_blank"]:hover {
+    background-color: #ff6600; /* Change background color on hover */
+    color: #ffffff; /* Change text color on hover */
+}
